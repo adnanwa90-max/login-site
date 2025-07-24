@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل الدخول</title>
+    <style>
+        body {
+            background-color: #eee;
+            font-family: sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .box {
+            background: white;
+            width: 300px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #999;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #msg {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>تسجيل الدخول</h2>
+        <input type="text" id="username" placeholder="اسم المستخدم">
+        <input type="password" id="password" placeholder="كلمة المرور">
+        <button onclick="login()">دخول</button>
+        <div id="msg"></div>
+    </div>
+
+    <script>
+        function login() {
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+            const msg = document.getElementById("msg");
+
+            if (user === "admin" && pass === "1234") {
+                window.location.href = "welcome.html";
+            } else {
+                msg.style.color = "red";
+                msg.innerText = "بيانات الدخول غير صحيحة.";
+            }
+        }
+    </script>
+</body>
+</html>
